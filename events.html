@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Company</title>
+</head>
+
+<body>
+    <h1 onclick="alert('Hero Programmer')">Exploring Events</h1>
+    <h1 onclick="console.log('Hero Programmer')">Exploring Events</h1>
+    <!-- <button onclick="alert(37)" type="submit">Click me</button> -->
+    <button onclick="handleClick()" type="submit">Click me</button>
+    <button onmousemove="handleClick()" type="submit">Click me</button>
+    <button>CLic me - 1</button>
+    <button id="second-btn">CLic me - 2</button>
+    <button id="third-btn">CLic me - 3</button>
+
+
+    <script>
+        function handleClick() {
+            console.log('Someone click me');
+            console.log(new Date());
+        }
+
+        //...................
+        function handleClick2() {
+            document.body.style.backgroundColor = 'cyan'
+        }
+        const secondBtn = document.getElementById('second-btn');
+        //way-1
+        secondBtn.onclick = function () {
+            console.log('Second person click');
+        }
+
+        //way-2
+        secondBtn.onclick = handleClick2;
+
+        //way-3
+        secondBtn.addEventListener('click',handleClick2);
+
+        //way-4
+            document.getElementById('third-btn').addEventListener('click',function(){
+                document.body.style.color='tomato'
+            })
+
+
+    </script>
+</body>
+
+</html>
